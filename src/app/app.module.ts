@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
+import { BoardgameComponent } from './components/boardgame/boardgame.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WrapperComponent
+    WrapperComponent,
+    BoardgameComponent
   ],
   imports: [
     BrowserModule,

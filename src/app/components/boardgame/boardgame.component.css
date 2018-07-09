@@ -1,0 +1,140 @@
+*{font-size: 1vw;}
+
+.lvl2div{
+    position: absolute;
+    background-color: green;
+    width: 80%;
+    height: 80%;
+    right: 2%;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    border: black 0.25vw solid;
+}
+.buttonseat{
+    position: absolute;
+    border-radius: 60%;
+    font-size: 1.5vw;
+    height: 4vw;
+    left: 44%;
+    top: 65%;
+    background-color: rgb(239, 243, 28);
+}
+.submitFormPop{
+    position: absolute;
+    top:15%;
+    left: 45%;
+    background-color: white;
+    width:30%;
+    height: 70%;
+    border-radius: 4%;
+    border: solid 0.30vw rgb(16, 81, 167);
+   
+}
+.sumbitin {
+    position: relative;
+    display: block;
+    top:3%;
+    left:4%;    
+    font-size: 1vw;
+    padding-top: 3%;
+    
+}
+
+.canselButton{
+    position: absolute;
+    font-size: 1vw;
+    bottom: 1%;
+    left: 1%;
+
+}
+.submitButton{
+    position: absolute;
+    font-size: 1vw;
+    bottom: 1%;
+    right: 1%;
+}
+
+.classnone{
+    display: none;
+}
+
+.handButtons{position: absolute;
+height: 100%;
+width: 100%;}
+
+
+
+
+
+.handControl1{
+    position: absolute;
+    left: 41%;
+    bottom: 20%;
+
+}
+.handControl2{
+    position: absolute;
+    left: 51%;
+    bottom: 20%;
+    width: 7vw;
+
+}
+.handControl3{
+    position: absolute;
+    left: 3%;
+    bottom: 5%;
+
+}
+.handControl4{
+    position: absolute;
+   left: 11%;
+    bottom: 5%;
+
+}
+.handControl5{
+    position: absolute;
+    right:4%;
+    bottom: 8%;
+}
+.playerPositio{
+    position: absolute;
+    left: 37%;
+    top: 53%;
+}
+.playerCards   {
+background-color: white;
+width: vw;
+height: 6vw;
+border: solid 0.10vw black;
+margin-left: -1vw;
+transform: rotate(6deg);
+transition-delay: 4s;
+}
+
+.detailposit{
+    position: absolute;
+    left:-2.4vw;
+}
+.details{
+    list-style-type:none;
+    border: solid 0.1vw black;
+    margin-top: 5%;
+    font-weight: bold;
+    color:white;
+    border-radius: 5%;
+    background-color: red;
+}
+.dealerPosition{
+    position: absolute;
+    left: 38%;
+    top: 15%;
+}
+.marmove{
+    position: relative;
+    color:white;
+    top:3vw;
+    left:10vw;
+    font-size: 2vw;
+    color: whitesmoke;
+    
+}

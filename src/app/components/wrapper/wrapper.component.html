@@ -1,18 +1,28 @@
 <div class="flex-container">
     <div class="toolbar">
+            <span class="spanopt" 
+        
+            >Min/Max buy in : 150/5000 $</span>
+            
+           
+          
+            
+            
         <i (click)="showAbout=true" class="fas fa-info"></i>
     </div>
     <div class="panel">
-        <!-- put here your component -->
+      <app-boardgame></app-boardgame>
+      
     </div>
     <div class="about" *ngIf="showAbout">
-        <p>This is the final project of<br><br><strong>[YOUR NAME HERE]</strong><br><br>as [HER/HIS] participation in
+        <p>This is the final project of<br><br><strong>Stefanos Demenschi-Lekkas</strong><br><br>as his participation in
             <br><strong>REvive Greece</strong>'s Web Front End Development Course<br>
             held at <strong>HIGGS</strong> from 11/4/2018 to 6/7/2018, and is free of charge for the participants.</p>
         <p>It is written in Angular 6, using HTML 5, CSS 3 and TypeScript.</p>
-        <p>Mentored by [YOUR MENTORS NAME]</p>
-        <p>To <strong>contact [YOUR NAME HERE]</strong> use <a href="mailto:[YOUR MAIL HERE]">[YOUR MAIL HERE]</a><br>
+        <p>Mentored by Pavlou Panayiotis</p>
+        <p>To <strong>contact Stefanos</strong> use <a href="mailto:[stefanos.lekk@gmail.com]">stefanos.lekk@gmail.com</a><br>
            To <strong>contact REvive Greece</strong> use <a href="mailto:info@revivegreece.org">info@revivegreece.org</a></p>
         <p><i (click)="showAbout=false" class="fas fa-times close"></i></p>
     </div>
+    
 </div>

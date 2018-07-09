@@ -10,7 +10,7 @@
 .toolbar {
     height: 30px;                             /* CHANGE THE HEIGHT ONLY IF ABSOLUTELY NECCESSARY */
     width: 100%;
-    background-color: rgb(231, 42, 222);    /* CHANGE THE COLOR TO ONE THAT MATCHES YOUR APP */
+    background-color: rgb(173, 140, 68);    /* CHANGE THE COLOR TO ONE THAT MATCHES YOUR APP */
 }
 .toolbar i:last-of-type {
     float: right;
@@ -26,7 +26,7 @@
     cursor: pointer;
 }
 .panel {
-    background-color: rgb(0, 119, 255); /* CHANGE THE COLOR TO ONE THAT MATCHES YOUR APP */
+    background-color:rgba(34, 122, 238, 0.418); /* CHANGE THE COLOR TO ONE THAT MATCHES YOUR APP */
     flex-grow: 1;
 }
 .about {
@@ -46,4 +46,13 @@
 .about .close {
     font-size: 2em;
     cursor: pointer;
+}
+.spanopt{
+    background-color: cornflowerblue;
+    border-radius: 4%;
+    position: absolute;
+    top: 0.2vw;
+    left:0.1vw;
+    padding-left: 0.1vw;
+    padding-right: 0.1vw;
 }

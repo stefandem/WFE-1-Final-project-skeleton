@@ -1,0 +1,73 @@
+<div class="lvl1div">  
+  <div class="lvl2div">
+      <span class="marmove"
+      [ngClass]="{'classnone': onoffButtons == false}"
+      class="marmove">
+          Winning pays 3 to 1 ! 
+         </span>
+      
+    <button class="buttonseat" (click)="buttonseat()"
+    [ngClass]="{'classnone': onoffButtons == false}"
+    
+    >Seat</button>
+    
+  </div>
+
+
+  <div class="submitFormPop" [ngClass]="{'classnone': submitOn == true}">
+    <label class="sumbitin">Nickname :</label>    
+    
+    <input class="sumbitin"
+    [(ngModel)]="nickName"    
+    type="text" placeholder="At least 3 characters">
+    <label class="sumbitin">Buy in :</label>
+    <input class="sumbitin" 
+    [(ngModel)]="amount"  
+    type="number" placeholder="Between min-max">
+    <button class="canselButton" (click)="buttonseat()">Cancel</button>
+    <button class="submitButton" (click)="submitCheck()">Submit</button>
+
+  </div>
+  <div class="handButtons0">
+      <button class="handControl1" 
+      [ngClass]="{'classnone': onoffButtons == true || hitstandBet == true}"
+      (click)="betCheck()"
+      min="0">Bet</button>
+      <input class="handControl2" 
+      [(ngModel)]="betamount"
+      type="number" [ngClass]="{'classnone': onoffButtons == true || hitstandBet == true}"
+      
+      placeholder="$">
+      <button class="handControl3"       
+      [ngClass]="{'classnone': hitstandBet == false}"
+      (click)="pickCard()"     
+      ngDefaultControl
+      >Hit</button>
+      <button class="handControl4" [ngClass]="{'classnone': hitstandBet == false}"
+      (click)="repeatDealer()"
+      >Stand</button>
+      
+      <button class="handControl5" [ngClass]="{'classnone': onoffButtons == true}" (click)="leaveGame()">Leave</button>
+    </div>    
+    <div  class="detailposit">
+      <ul>
+       <li class="details" [ngClass]="{'classnone': onoffButtons == true}" >Nickname : <br>{{nickName}}</li>
+       <li  class="details" [ngClass]="{'classnone': onoffButtons == true}" >Total : <br>{{amount}} $</li>      
+       <li  class="details" [ngClass]="{'classnone': hitstandBet == false}" >Current bet : <br>{{betamount}} $</li>      
+       <li  class="details" [ngClass]="{'classnone': hitstandBet == false}" >Sum : {{playerSum}} <br></li>      
+       <li  class="details" [ngClass]="{'classnone': hitstandBet == false}" >Sum : {{dealerSum}} <br></li>      
+    </ul>
+
+    </div>
+     <div class="playerPositio">   
+    <img *ngFor="let cards of holdCard; let i=index" 
+    src="../assets/png/{{holdCard[i]}}.png"
+    class="playerCards">
+    </div>
+     <div class="dealerPosition">   
+    <img *ngFor="let dealercards of dealerHand; let i=index" 
+    src="../assets/png/{{dealerHand[i]}}.png"
+    class="playerCards">
+    </div>
+    
+</div>

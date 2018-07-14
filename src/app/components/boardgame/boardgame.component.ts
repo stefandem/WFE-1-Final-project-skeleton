@@ -7,11 +7,11 @@ import { TrustedHtmlString } from '@angular/core/src/sanitization/sanitization';
   styleUrls: ['./boardgame.component.css']
 })
 export class BoardgameComponent implements OnInit {
-  private submitOn: boolean = true;
-  private nickName: string;
+  private submitOn: boolean = true; 
+  private nickName: string; // input name
   private amount: number; // buy in money and total
-  private onoffButtons: boolean = true;
-  private hitstandBet: boolean = false;
+  private onoffButtons: boolean = true;  //  displayin or not buttons condition
+  private hitstandBet: boolean = false;  //  displayin or not buttons condition
   private Deck: string[][] = [['2club', '2'], ['2hearts', '2'], ['2_of_diamonds', '2'], ['2_of_spades', '2'],
   ['3_of_clubs', '3'], ['3_of_hearts', '3'], ['3_of_diamonds', '3'], ['3_of_spades', '3'],
   ['4_of_clubs', '4'], ['4_of_hearts', '4'], ['4_of_diamonds', '4'], ['4_of_spades', '4'],
@@ -27,21 +27,21 @@ export class BoardgameComponent implements OnInit {
   ['ace_of_clubs', '1'], ['ace_of_hearts', '1'], ['ace_of_diamonds', '1'], ['ace_of_spades', '1'],
   ];
   private deckInUse: string[][] = Object.assign(this.Deck); //  copy of deck
-  private holdCard: string[] = [];
+  private holdCard: string[] = []; // cards in player hand
   private betamount: number;
   private playerSum: number = 0;
-  private holdValue: number;
-  private dealerHand: string[] = [];
+  private holdValue: number; // the value of the card
+  private dealerHand: string[] = []; // cards in dealer hand 
   private dealerSum: number = 0;
 
   constructor() { }
 
   ngOnInit() {
   }
-  buttonseat() {
+  buttonseat() { // display under if the submit form
     this.submitOn = !this.submitOn;
   }
-  submitCheck() {
+  submitCheck() { // checking the inputs
     if (this.nickName.length > 2 && this.amount >= 150 && this.amount <= 5000) {
       this.submitOn = !this.submitOn;
       this.onoffButtons = !this.onoffButtons;
@@ -50,7 +50,7 @@ export class BoardgameComponent implements OnInit {
       alert('Please,check our inputs');
     }
   }
-  leaveGame() {
+  leaveGame() { // return values to default
     this.submitOn = true;
     this.nickName = undefined;
     this.amount = undefined; // buy in mon
@@ -74,7 +74,7 @@ export class BoardgameComponent implements OnInit {
 
 
   }
-  dealerCard() {
+  dealerCard() { // draw cards for dealer and the sum.
     let dealHolder = Math.floor(Math.random() * this.Deck.length);
     this.dealerSum = this.dealerSum + (+(this.Deck[dealHolder][1]));
     this.dealerHand.push(this.Deck[dealHolder][0]);
@@ -82,7 +82,7 @@ export class BoardgameComponent implements OnInit {
 
   }
 
-  betCheck() {
+  betCheck() { // checking the amount of bet
     if (this.betamount > 0 && this.betamount <= this.amount) {
       this.hitstandBet = !this.hitstandBet;
       this.pickCard();
@@ -94,14 +94,16 @@ export class BoardgameComponent implements OnInit {
       return false;
     }
   }
-  repeatDealer() {// dealer repeat drawing
+  repeatDealer() {// dealer repeat drawing and winning conditions
 
     while (this.dealerSum <= 17) {
         this.dealerCard();
     }
     if (this.dealerSum > 21) {
       setTimeout(() => { alert('You won'); }, 100);
-      setTimeout(() => this.endGame(), 1500);
+      setTimeout(() => this.endGame() , 1500); // time trigger so you can see the cards, 
+      // else win-lost you dont have time to see the cards because the next turn starts, 
+      // the display of cards take more time than winning checks.
       this.amount = this.amount + (this.betamount * 3 );
     } else if (this.dealerSum < 21 && this.dealerSum > this.playerSum) {
       setTimeout(() => { alert('You lost'); }, 100);
@@ -118,7 +120,7 @@ export class BoardgameComponent implements OnInit {
   }
 
 
-  endGame() {
+  endGame() { // default values when turn ends
 
     this.hitstandBet = false;
     this.holdCard = [];
